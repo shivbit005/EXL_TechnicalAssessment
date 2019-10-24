@@ -1,0 +1,29 @@
+<div>
+    <h2> User List </h2>
+    <br />
+    <input type='text' (keyup)='onChange($event)'>
+    <table mdbTable bordered="true">
+        <thead class="grey lighten-1 black-text">
+            <tr>
+                <th scope="col"><span>#</span></th>
+                <th><span>First Name</span></th>
+                <th><span>Last Name</span></th>
+                <th><span>Job Title</span></th>
+                <th><span>Age</span></th>
+                <th><span>Employment Start Date</span></th>
+                <th><span>Employment End Date</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr mdbTableCol *ngFor="let employee of filterData | async">
+                <th scope="row">{{employee.employeeID}}</th>
+                <td> <span>{{employee.firstName}} </span></td>
+                <td> <span>{{employee.lastName}} </span></td>
+                <td> <span>{{employee.jobTitle}} </span></td>
+                <td> <span>{{employee.age}} </span></td>
+                <td> <span>{{employee.employmentStartDate}} </span></td>
+                <td> <span>{{employee.employmentEndDate}} </span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
